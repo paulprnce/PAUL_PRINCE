@@ -1,0 +1,875 @@
+
+/* ============================
+   Paul Portfolio – Dark Pro Theme
+   ============================ */
+   
+:root {
+  --bg: #0b0b0d;
+  --panel: #bdbdca;
+  --text: #f5f5f5;
+  --muted: #b0b0b0;
+  --accent: #ffffff;
+  --radius: 14px;
+  --shadow: 0 8px 20px rgba(0,0,0,0.5);
+  --transition: 0.3s ease;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+}
+
+/* Container */
+.container {
+  width: min(1100px, 90%);
+  margin: 0 auto;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 0;
+  gap: 40px;
+}
+.hero-text h1 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 800;
+}
+.hero-text .tagline {
+  color: var(--muted);
+  margin-top: 10px;
+  font-size: 1.05rem;
+  max-width: 60ch;
+}
+.cta-row {
+  margin-top: 20px;
+  display: flex;
+  gap: 14px;
+}
+.btn {
+  background: var(--accent);
+  color: var(--bg);
+  padding: 10px 18px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+}
+.btn:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+.btn-ghost {
+  background: transparent;
+  border: 2px solid var(--accent);
+  color: var(--text);
+}
+.btn-ghost:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+/* Avatar */
+.avatar {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+  box-shadow: var(--shadow);
+  transition: transform var(--transition);
+}
+.avatar:hover { transform: scale(1.05); }
+
+/* Sections */
+section { padding: 60px 0; }
+h2 { font-size: 1.8rem; margin-bottom: 20px; 
+text-transform: uppercase;}
+
+/* Grid Layout */
+.grid { list-style: none; padding: 0; display: grid; gap: 14px; }
+.grid-3 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+
+/* Project Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+.card {
+  background: var(--panel);
+  padding: 20px;
+  border-radius: var(--radius);
+  transition: var(--transition);
+  border: 1px solid #1e1e22;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+  border-color: var(--accent);
+}
+.card h3 { margin-bottom: 10px; }
+
+/* Links */
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Footer */
+.footer {
+  border-top: 1px solid #c8c8cc;
+  padding: 20px 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+
+/* Navigation Bar */
+
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: black;
+  height: 60px;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content:space-between;  /* center menu items */
+  gap: 30px;                /* spacing between items */
+  z-index: 1000;
+  overflow: hidden;
+}
+/* Video background */
+
+
+/* Logo image */
+.logo-img {
+  height: 70px;   /* adjust logo size */
+  width: 120;
+  display: block;
+}
+
+/* Navigation links */
+.nav-links {
+  margin-left: auto;
+  display: flex;
+  gap: 20px;   /* space between links */
+}
+
+.nav-links a {
+  color: rgb(159, 158, 158);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.nav-links a:hover {
+  color: #64e1b4;
+  transform: scale(1.1);
+}
+
+
+/* Active/visited link */
+.navbar a:active {
+  color: #5b8cff;
+}
+/* Logo hover effect */
+.logo-link:hover .logo-img {
+  filter: drop-shadow(0 0 10px #64e1b4) drop-shadow(0 0 20px #64e1b4);
+  transform: scale(1.05);   /* slight zoom */
+  transition: all 0.3s ease-in-out;
+}
+/* Center Title */
+.nav-title {
+  font-family: 'Montserrat', sans-serif; /* stylish modern font */
+  font-size: 30px;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 20px;
+  background: linear-gradient(90deg, #5b8cff, #64e1b4, #ffffff);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientFlow 4s ease-in-out infinite alternate;
+  position: absolute;   /* keep centered regardless of logo/links */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Gradient Animation */
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(120deg, #0d0d0d, #1a1a1a, #0d0d0d);
+  background-size: 300% 300%;
+  animation: gradientFlow 12s ease infinite;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Gradient animation */
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Particles canvas */
+#particles {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none; /* lets user click through */
+  z-index: 1;
+}
+
+/* Content */
+.hero-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Profile Image */
+.hero-img img {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.2);
+  animation: floatImg 4s ease-in-out infinite;
+}
+
+/* Floating animation */
+@keyframes floatImg {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+/* Hero split layout */
+.hero-split {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  padding: 0 5%;
+  background: #080808;   /* white for minimal look, you can change */
+  color: #7e7c7c;
+}
+
+/* Big bold title */
+.big-title {
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 900;
+  font-size: 12rem;   /* adjust size */
+  line-height: 1;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* Shift PAUL slightly to the left */
+.big-title .first-line {
+  display: inline-block;
+  margin-left: -230px;   /* adjust value as needed */
+}
+/* shift PRINCE slightly to the right */
+.big-title .second-line {
+  display: inline-block;
+  margin-left: 200px;   /* adjust this value */
+}
+
+/* Subtitle/tagline */
+.tagline {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-top: 15px;
+  color: #444;
+}
+
+/* Profile image */
+.hero-image img {
+  width: 350px;      /* adjust as needed */
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+}
+
+
+.slide-reveal {
+  display: inline-block;
+  transform: translateX(-50px);
+  opacity: 0;
+  animation: slideIn 4s ease forwards;
+}
+
+.slide-reveal:nth-child(2) {
+  animation-delay: 2s; /* PRINCE comes after PAUL */
+}
+
+@keyframes slideIn {
+  to {
+    transform: translateX(0);
+    opacity: 10;
+  }
+}
+
+
+
+/* Background video */
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* cover the whole section */
+  z-index: 0; /* send video behind content */
+  
+}
+
+
+
+
+/* spotlight overlay */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: radial-gradient(
+    circle 150px at var(--x, 50%) var(--y, 50%),
+ rgba(0, 200, 255, 0.08),
+    transparent 50%
+  );
+}
+
+
+
+
+/*skills style*/
+
+.skills-marquee {
+  padding: 60px 0;
+  background: transparent; /* black background to match your theme */
+  text-align: center;
+  overflow: hidden;
+
+
+
+  /* force full width across screen */
+  width: 100vw;
+  margin-left: calc(-50vw + 50%); /* removes container side padding */
+}
+.skills-marquee h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.marquee {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 30px;
+  min-width: 200%;
+  animation: scroll-left 35s linear infinite;
+   transition: transform 0.3s ease;
+}
+
+.skill-card {
+  flex: 0 0 auto;
+  min-width: 280px;
+  padding: 20px;
+  border-radius: 14px;
+  background: #111;
+  color: #fff;
+  font-size: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  border: 1px solid #222;
+}
+
+/* Scrolling Animation */
+@keyframes scroll-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+
+/*button*/
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 2;
+    border-radius: 50%;
+}
+
+.left-btn { left: 10px; }
+.right-btn { right: 10px; }
+
+
+
+
+
+
+
+.skill-card img {
+  width: 60px;        /* fixed width */
+  height: 60px;       /* fixed height */
+  object-fit: contain; /* keep aspect ratio inside box */
+  display: block;
+  margin: 0 auto 10px; /* center & space below */
+  background:transparent; /* optional light background for consistency */
+  padding: 6px;        /* optional spacing inside */
+  border-radius: 8px;  /* rounded corners (optional) */
+}
+
+
+.skill-card {
+  width: 300px;         /* same width */
+  height: 250px;        /* same height */
+  border-radius: 12px;
+  padding: 20px;
+  background: #111;     /* fallback background */
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+.skill-wrapper {
+  perspective: 1000px; /* allows 3D effect */
+}
+
+
+.skill-card {
+  width: 280px;
+  height: 200px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+  cursor: pointer;
+}
+
+/* when clicked, add "flipped" */
+.skill-card.flipped {
+  transform: rotateY(180deg);
+}
+
+/* card faces */
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* hides the back when not visible */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* front face */
+.card-front {
+  background: #111;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+/* back face with blurred background */
+.card-back {
+  width: 90px;   /* reduce logo size */
+  height: 90px;
+  transform: rotateY(180deg);
+  background-image: var(--bg-img);
+  background-size: contain;
+  background-position: center;
+  filter: blur(0.2px) brightness(0.6);
+}
+
+
+/*skill title*/
+.skill-title {
+  text-transform: uppercase; /* All caps */
+  font-weight: 600;
+  font-size: 1rem; /* Adjust size */
+  color: #cdf7f7; /* Base text color */
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /* Soft shadow for glow effect */
+  transition: color 0.3s ease, text-shadow 0.3s ease; /* Smooth transition */
+}
+
+/* Optional hover for subtle emphasis */
+.skill-title:hover {
+  color: #1a73e8; /* Slight color change */
+  text-shadow: 0 4px 12px rgba(26, 115, 232, 0.3); /* Gentle glow on hover */
+}
+
+
+
+
+
+
+
+
+
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+
+
+
+
+
+
+
+
+/* 1. New Wrapper for Positioning Context */
+.about-content-wrapper {
+    /* Critical: This establishes the positioning context for the absolutely positioned animation */
+    position: relative; 
+    /* Max-width to center your main content area (adjust as needed) */
+    max-width: 1000px; 
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 400px; /* Ensure there is enough vertical space */
+}
+
+/* 2. Style for your About Me text content */
+.about-text {
+    /* Ensure the text doesn't flow under the absolute animation */
+    padding-right: 350px; 
+    text-align: left;
+    color: #333; /* Example color */
+}
+
+/* 3. Wrapper for the Animation (The one we will absolutely position) */
+#container-wrapper {
+    position: absolute; /* Takes the animation out of the normal flow */
+    top: 50%; /* Start vertical position at the middle of the wrapper */
+    right: 0; /* Align it to the right edge of the wrapper */
+    transform: translateY(-50%); /* Centers it vertically based on its own height */
+    width: 300px; /* Gives it a defined space */
+    text-align: center;
+}
+
+
+/* 4. ANIMATION STYLES (MODIFIED FROM YOUR ORIGINAL CODE) */
+
+#container {
+    color: #999;
+    text-transform: uppercase;
+    font-size: 36px;
+    font-weight: bold;
+    /* Removed all positioning/padding to make it behave normally inside its parent */
+    position: static; 
+    width: auto;
+    display: block;
+    padding-top: 0; 
+}
+
+#flip {
+    height: 60px;
+    overflow: hidden;
+}
+
+#flip > div > div {
+    color: #fff;
+    padding: 4px 12px;
+    height: 60px;
+    margin-bottom: 30px;
+    display: inline-block;
+}
+
+#flip div:first-child {
+    animation: show 5s linear infinite;
+}
+
+#flip div div {
+    background: #42c58a;
+}
+#flip div:first-child div {
+    background: #4ec7f3;
+}
+#flip div:last-child div {
+    background: #DC143C;
+}
+
+@keyframes show {
+    0% {
+        margin-top: -270px;
+    }
+    5% {
+        margin-top: -180px;
+    }
+    33% {
+        margin-top: -180px;
+    }
+    38% {
+        margin-top: -90px;
+    }
+    66% {
+        margin-top: -90px;
+    }
+    71% {
+        margin-top: 0px;
+    }
+    99.99% {
+        margin-top: 0px;
+    }
+    100% {
+        margin-top: -270px;
+    }
+}
+
+/* 5. Animation Demo Label Style */
+.animation-demo-label {
+    /* Use a class instead of the 'p' selector to avoid styling all paragraphs */
+    position: static;
+    font-size: 12px;
+    color: #999;
+    margin-top: 10px;
+}
+
+
+
+
+/* 1. CONTAINER FOR POSITIONING CONTEXT */
+/* Locate the parent of the ABOUT ME content and set it as the anchor */
+.about-content-wrapper {
+    position: relative; 
+    max-width: 1200px; /* Adjust to match your design's width */
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 400px; /* Ensure enough height for the animation to sit in */
+    /* Add a background color if necessary to test visibility: background: #000; */
+}
+
+/* 2. ABOUT ME TEXT CONTENT */
+.about-text {
+    /* Push the text to the left and leave room for the animation on the right */
+    max-width: 65%; /* Limit the text width */
+    padding-right: 350px; /* Reserve this space for the animation */
+    text-align: left;
+    color: #fff; /* Assuming white text on a dark background */
+}
+
+
+/* 3. ANIMATION WRAPPER (This is the key to placement) */
+#container-wrapper {
+    position: absolute; /* Takes it out of the flow */
+    top: 110%; /* Start at the vertical center of the ABOUT ME section */
+    right: 0;
+    left: 70%; /* Align it to the right edge of the wrapper */
+    transform: translateY(-50%); /* Center it vertically based on its own height */
+    width: 300px; /* Give it a fixed width */
+    text-align: center;
+    z-index: 100; /* Ensure it's on top of any other content/background */
+}
+
+/* 4. ANIMATION CORE STYLES (Restored for visibility) */
+#container {
+    color: #999;
+    text-transform: uppercase;
+    font-size: 40px;
+    font-weight: bold;
+    /* This padding is critical for the animation keyframes to work correctly */
+    padding-top: 200px; 
+    position: relative; /* Necessary for the keyframe margin-top to work */
+    width: auto;
+    display: block;
+    margin: 0; /* Resetting any residual margin */
+}
+
+/* ... (Keep the rest of your original CSS unchanged, including #flip and @keyframes show) ... */
+
+p.animation-demo-label { /* Use the class to style the p tag */
+    position: static;
+    font-size: 12px;
+    color: #999;
+    margin-top: 10px;
+}
+
+
+
+
+
+/*project style*/
+.cards {
+  display: flex;
+  gap: 20px;
+  height: 400px; /* fixed height for nice expansion */
+  width:1200px;
+}
+
+
+.card {
+  flex: 1; /* all cards equal size initially */
+  padding: 30px;
+  border-radius: 14px;
+  background-size: cover;        /* make image fill card */
+  background-position: center;
+  color: #fff;
+  border: 1px solid #38d096;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  overflow: hidden;
+  transition: flex 0.6s ease, transform 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position:relative;
+}
+
+/* add a dark overlay for faded look */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);  /* controls fade intensity */
+  z-index: 0;
+}
+
+.card h3,
+.card p {
+  position: relative;
+  z-index: 1; /* place text above overlay */
+}
+
+.card h3 {
+  margin-bottom: 10px;
+}
+
+.card:hover {
+  flex: 7; /* expands width */
+  transform: scale(1.04);
+}
+
+.cards:hover .card:not(:hover) {
+  flex: 4; /* shrink other cards */
+  opacity: 0.6; /* optional fade */
+}
+
+
+
+
+.card-content {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  padding: 20px;
+  border-radius: 14px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+/* 🟩 show text on click */
+.card.active .card-content {
+  opacity: 1;
+  visibility: visible;
+}
+
+.card h3 {
+  margin-bottom: 10px;
+  color: #38d096;
+}
+
+.card p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+
+
+
+
+
+/* profile icons*/
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 15px;
+}
+
+.social-icons a {
+  color: #ffffff; /* adjust as per theme */
+  font-size: 24px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #00bcd4; /* highlight color */
+  transform: scale(1.2);
+}
+
+
+
+
+.cv-icon-text {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #00bcd4;
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-decoration: none !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.cv-icon-text:hover {
+  background: #00bcd4;
+  color: #000;
+  transform: scale(1.05);
+  text-decoration: none !important;
+}
