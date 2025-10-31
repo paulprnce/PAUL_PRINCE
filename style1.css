@@ -884,15 +884,7 @@ html, body {
 }
 
 
-.hero-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  z-index: -1;
-}
+
 
 
 section, div {
@@ -901,23 +893,8 @@ section, div {
 }
 
 
-@media (max-width: 768px) {
-  .hero {
-    flex-direction: column;
-    text-align: center;
-    padding: 1rem;
-  }
 
-  .cards {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
 
-  .card {
-    width: 100%;
-  }
-}
 
 
 
