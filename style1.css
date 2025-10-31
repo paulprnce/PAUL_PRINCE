@@ -875,22 +875,7 @@ p.animation-demo-label { /* Use the class to style the p tag */
 }
 
 
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  overflow-x: hidden;  /* hides horizontal overflow */
-  max-width: 100vw;    /* ensures no element exceeds screen width */
-}
 
-
-
-
-
-section, div {
-  max-width: 100%;
-  box-sizing: border-box;
-}
 
 
 
